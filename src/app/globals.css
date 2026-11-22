@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 45% 97%;
+    --foreground: 18 30% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 18 30% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 18 30% 11%;
+    --primary: 7 76% 46%;
+    --primary-foreground: 40 60% 98%;
+    --secondary: 36 70% 92%;
+    --secondary-foreground: 18 40% 20%;
+    --muted: 36 35% 93%;
+    --muted-foreground: 20 12% 36%;
+    --accent: 27 92% 54%;
+    --accent-foreground: 18 30% 11%;
+    --destructive: 0 72% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 30% 86%;
+    --input: 33 30% 82%;
+    --ring: 7 76% 46%;
+    --basil: 142 45% 32%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 18 22% 7%;
+    --foreground: 38 40% 95%;
+    --card: 18 18% 10%;
+    --card-foreground: 38 40% 95%;
+    --popover: 18 18% 10%;
+    --popover-foreground: 38 40% 95%;
+    --primary: 8 80% 56%;
+    --primary-foreground: 18 30% 8%;
+    --secondary: 18 16% 16%;
+    --secondary-foreground: 38 40% 92%;
+    --muted: 18 14% 15%;
+    --muted-foreground: 30 14% 68%;
+    --accent: 28 90% 55%;
+    --accent-foreground: 18 30% 8%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 18 12% 20%;
+    --input: 18 12% 24%;
+    --ring: 8 80% 56%;
+    --basil: 142 40% 50%;
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+@layer components {
+  .section-title { @apply font-display text-3xl font-semibold tracking-tight md:text-4xl; }
+  .section-lead { @apply mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground; }
+  .dough-bg {
+    background-image: radial-gradient(hsl(var(--accent) / 0.16) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+}
